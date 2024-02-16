@@ -36,11 +36,18 @@ resource "aws_vpc" "vpc-ap-south-1" {
   }
 }
 
-resource "aws_subnet" "main" {
-  vpc_id     = vpc-023535684d791b67c
+resource "aws_subnet" "pubsub" {
+  vpc_id     = aws_vpc.myvpc.id
   cidr_block = "10.2.0.0/16"
 
   tags = {
-    Name = "Main"
+    Name = "pub-sub"
   }
 }
+
+
+
+
+
+
+
